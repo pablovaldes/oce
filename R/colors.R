@@ -364,6 +364,7 @@ colormap <- function(z,
                      missingColor, subdivisions=1,
                      debug=getOption("oceDebug"))
 {
+    oceDebug(debug, "A: length(x0):", length(x0), "\n")
     oceDebug(debug, "colormap() {\n", unindent=1)
     zKnown <- !missing(z)
     zlimKnown <- !missing(zlim)
@@ -373,6 +374,8 @@ colormap <- function(z,
     if (missingColorKnown)
         oceDebug(debug, 'missingColor:', missingColor, '\n')
     xcolKnown <- !missing(x0) && !missing(x1) && !missing(col0) && !missing(col1)
+    oceDebug(debug, "xcolKnown:", xcolKnown, "\n")
+    oceDebug(debug, "breaksKnown:", breaksKnown, "\n")
     if (zlimKnown && breaksKnown && length(breaks) > 1)
         stop("cannot specify both zlim and breaks, unless length(breaks)==1")
     if (!zlimKnown) {
@@ -392,6 +395,7 @@ colormap <- function(z,
             stop("cannot infer zlim; please specify zlim, breaks, name, or z")
         }
     }
+    oceDebug(debug, "B: length(x0):", length(x0), "\n")
     oceDebug(debug, "zlim=", if (is.null(zlim)) "NULL" else zlim, "\n")
     oceDebug(debug, "zclip=", zclip, "\n")
     if (nameKnown) {
@@ -404,6 +408,7 @@ colormap <- function(z,
     }
     oceDebug(debug, "blend=", blend, "; n=", n, "\n")
     if (zlimKnown && !breaksKnown) {
+        oceDebug(debug, "setting breaks from zlim\n")
         breaks <- seq(min(zlim, na.rm=TRUE), max(zlim, na.rm=TRUE), length.out=200)
         breaksKnown <- TRUE            # this makes next block execute also
     } else {
@@ -413,6 +418,7 @@ colormap <- function(z,
             breaksKnown <- TRUE            # this makes next block execute also
         }
     }
+    oceDebug(debug, "C: length(x0):", length(x0), "\n")
     if (breaksKnown) {
         oceDebug(debug, "processing case B (breaks given, or inferred from case A)\n")
         ## if (n > 1L) {
@@ -446,6 +452,7 @@ colormap <- function(z,
         rval$x1 <- rval$breaks[-1]
         rval$col0 <- rval$col
         rval$col1 <- rval$col
+        oceDebug(debug, "line456: length(x0):", length(rval$x0), "\n")
         ##message("rval$zcol:", paste(rval$zcol, collapse=", "))
     } else {
         if (nameKnown) {
@@ -505,11 +512,18 @@ colormap <- function(z,
             rval$zcol <- "black"
         }
     }
+    oceDebug(debug, "D: length(x0):", length(x0), "\n")
+    oceDebug(debug, "D2: length(rval$x0):", length(rval$x0), "\n")
     if (!nameKnown)
         rval$missingColor <- if (missingColorKnown) missingColor else "gray"
     rval$zclip <- zclip
     subdivisions <- as.integer(subdivisions)
+    oceDebug(debug, "length(x0): ", length(rval$x0), "\n")
+    oceDebug(debug, "length(breaks): ", length(rval$breaks), "\n")
     if (subdivisions > 1) {
+        ## Ensure an even number of subdivisions
+        if (subdivisions %% 2)
+            subdivisions <- subdivisions + 1
         warning("colormap(..., subdivisions=", subdivisions, ") is not working yet")
         rval$breaks_ <- rval$breaks
         rval$x0_ <- rval$x0
@@ -518,16 +532,17 @@ colormap <- function(z,
         rval$col0_ <- rval$col0
         rval$col1_ <- rval$col1
         nbreaks <- length(rval$breaks)
-        if (nbreaks > 1) {
-            BREAKS <- NULL
-            for (i in seq.int(2, length(rval$breaks))) {
-                BREAKS <- c(BREAKS, seq(from=rval$breaks[i-1], by=(rval$breaks[i]-rval$breaks[i-1])/subdivisions,
-                                        length.out=subdivisions))
-            }
-            rval$breaks <- BREAKS
-            ## FIXME not using the above -- this is wrong
-            warning("fuzzy thinking in colors.R near line 529\n")
+        if (nbreaks <= 1)
+            stop("number of breaks must exceed 1")
+        BREAKS <- NULL
+        for (i in seq.int(2, length(rval$breaks))) {
+            BREAKS <- c(BREAKS, seq(from=rval$breaks[i-1], by=(rval$breaks[i]-rval$breaks[i-1])/subdivisions,
+                                    length.out=subdivisions))
         }
+        BREAKS <- c(BREAKS, tail(rval$breaks, 1))
+        rval$breaks <- BREAKS
+        ## FIXME not using the above -- this is wrong
+        warning("fuzzy thinking in colors.R near line 529\n")
         ncol <- length(rval$col)
         if (ncol > 1) {
             X0 <- X1 <- NULL
@@ -547,8 +562,8 @@ colormap <- function(z,
             rval$x0 <- X0
             rval$x1 <- X1
             rval$col1 <- COL1
-            rval$col <- COL
-            rval$breaks <- c(rval$x0, tail(rval$x1,1))  ## FIXME this is wrong
+            rval$col <- c(rep(rval$col[1], subdivisions/2), COL, rep(rval$col[ncol], subdivisions/2))
+            ## rval$breaks <- c(rval$x0, tail(rval$x1,1))  ## FIXME this is wrong
         }
     }
     class(rval) <- c("list", "colormap")
