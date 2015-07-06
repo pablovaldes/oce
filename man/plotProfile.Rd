@@ -17,6 +17,7 @@
     xlab=NULL, ylab=NULL,
     col="black",
     col.salinity="darkgreen",
+    col.conductivity="darkgreen",
     col.temperature="red",
     col.rho="blue",
     col.N2="brown",
@@ -56,6 +57,8 @@
       \item{\code{"index"}}{Index of sample (very useful for working with
         \code{\link{ctdTrim}}).}
       \item{\code{"salinity+temperature"}}{Profile of salinity and temperature
+        within a single axis frame.}
+      \item{\code{"conductivity+temperature"}}{Profile of conductivity and temperature
         within a single axis frame.}
       \item{\code{"N2"}}{Profile of square of buoyancy frequency \eqn{N^2}{N^2},
         calculated with \code{\link{swN2}} with an optional argument setting of
