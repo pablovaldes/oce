@@ -2619,6 +2619,7 @@ plotProfile <- function (x,
                          xlab=NULL, ylab=NULL,
                          col='black',
                          col.salinity = "darkgreen",
+                         col.conductivity = "darkgreen",
                          col.temperature = "red",
                          col.rho = "blue",
                          col.N2 = "brown",
@@ -3337,6 +3338,50 @@ plotProfile <- function (x,
             abline(h=seq(at[1], at[2], length.out=at[3]+1), col=col.grid, lty=lty.grid)
         }
         lines(salinity, y, col = col.salinity, lwd=if (length(lwd)>1)lwd[2] else lwd[1])
+    } else if (xtype == "conductivity+temperature") {
+        if (add)
+            warning("argument 'add' is ignored for xtype=\"conductivity+temperature\"")
+        conductivity <- if (is.null(x[['conductivityUnit']])) x@data$conductivity else if (x[['conductivityUnit']] == 'mS/cm') x@data$conductivity/42.91754 else if (x[['conductivityUnit']] == 'S/m') x@data$conductivity/4.291754 else x@data$conductivity
+        temperature <- if (eos == "gsw") swConservativeTemperature(x) else x@data$temperature
+        if (!any(is.finite(conductivity))) {
+            warning("no valid conductivity data")
+            return(invisible())
+        }
+        if (!any(is.finite(temperature))) {
+            warning("no valid temperature data")
+            return(invisible())
+        }
+        if (missing(Clim)) Clim <- range(conductivity, na.rm=TRUE)
+        if (missing(Tlim)) Tlim <- range(temperature, na.rm=TRUE)
+        look <- if (keepNA) 1:length(y) else !is.na(temperature) & !is.na(y)
+        plot(temperature[look], y[look],
+             xlim=Tlim, ylim=ylim,
+             type = "n", xlab = "", ylab = yname, axes = FALSE, xaxs=xaxs, yaxs=yaxs)
+        axis(3, col = col.temperature, col.axis = col.temperature, col.lab = col.temperature)
+        if (is.null(getOption('plotProfileNoXLab'))) {
+            if (eos == "gsw")
+                mtext(resizableLabel("conservative temperature", "x"), side = 3, line=axis.name.loc, col=col.temperature, cex=par("cex"))
+            else
+                mtext(resizableLabel("T", "x"), side=3, line=axis.name.loc, col=col.temperature, cex=par("cex"))
+        }
+        axis(2)
+        box()
+        lines(temperature, y, col = col.temperature, lwd=lwd)
+        par(new = TRUE)
+        look <- if (keepNA) 1:length(y) else !is.na(x@data$conductivity) & !is.na(y)
+        plot(conductivity[look], y[look],
+             xlim=Clim, ylim=ylim,
+             type = "n", xlab = "", ylab = "", axes = FALSE, xaxs=xaxs, yaxs=yaxs)
+        axis(1, col = col.conductivity, col.axis = col.conductivity, col.lab = col.conductivity)
+        if (is.null(getOption('plotProfileNoXLab'))) {
+            mtext(resizableLabel("C", "x"), side=1, line=axis.name.loc, col=col.conductivity, cex=par("cex"))
+        }
+        box()
+        if (grid) {
+            at <- par("yaxp")
+            abline(h=seq(at[1], at[2], length.out=at[3]+1), col=col.grid, lty=lty.grid)
+        }
+        lines(conductivity, y, col = col.conductivity, lwd=if (length(lwd)>1)lwd[2] else lwd[1])
     } else {
         w <- which(names(x@data) == xtype)
         if (length(w) < 1)
