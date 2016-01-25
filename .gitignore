@@ -16,3 +16,4 @@ oce.out
 Rplots.pdf
 create_data
 autom4te.cache
+*.nc
