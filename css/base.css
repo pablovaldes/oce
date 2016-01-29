@@ -104,7 +104,6 @@
 ================================================== */
 	ul, ol { margin-bottom: 20px; }
 	ul { list-style: none outside; }
-        ul.datasets { list-style-type: circle; }
 	ol { list-style: decimal; }
 	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
 	ul.square { list-style: square outside; }
