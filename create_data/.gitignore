@@ -1,2 +1,4 @@
 *.rda
 *.out
+check_plots.pdf
+*.png
