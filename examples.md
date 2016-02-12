@@ -10,12 +10,8 @@ image to enlarge it, or click the title above the image to see the R code that
 created it.
 
 [`ctd`](oce-demo-1.html)
-![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png)
 
-
-Code Link | Example
---------- | -------
-[`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbmail.png)](oce-demo-1.png)
+[![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png)
 
 <table class="galleryitem">
     <tr><td><a href="oce-demo-1.html">CTD</a></td></tr>
