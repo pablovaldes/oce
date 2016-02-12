@@ -11,30 +11,30 @@ created it.
 
 [CTD (`ctd`) objects](oce-demo-1.html)
 
-[![a](http://dankelley.github.io/oce/oce-demo-1-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-1.png)
+[![a]({{ site.url }}/oce/oce-demo-1-thumbnail.png)]({{ site.url }}/oce/oce-demo-1.png)
 
 
 [Acoustic Doppler Profiler (`adp`) objects](oce-demo-2.html)
 
-[![a](http://dankelley.github.io/oce/oce-demo-2-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-2.png)
+[![a]({{ site.url }}/oce/oce-demo-2-thumbnail.png)]({{ site.url }}/oce/oce-demo-2.png)
 
 
 [Sea-level (`sealevel`) objects](oce-demo-3.html)
 
-[![a](http://dankelley.github.io/oce/oce-demo-3-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-3.png)
+[![a]({{ site.url }}/oce/oce-demo-3-thumbnail.png)]({{ site.url }}/oce/oce-demo-3.png)
 
 
 [Echosounder (`echosounder`) objects](oce-demo-4.html)
 
-[![a]({{ site.url }}/oce/oce-demo-4-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-4.png)
+[![a]({{ site.url }}/oce/oce-demo-4-thumbnail.png)]({{ site.url }}/oce/oce-demo-4.png)
 
 
 [Coastline (`coastline`) objects](oce-demo-5.html)
 
-[![a](http://dankelley.github.io/oce/oce-demo-5-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-5.png)
+[![a]({{ site.url }}/oce/oce-demo-5-thumbnail.png)]({{ site.url }}/oce/oce-demo-5.png)
 
 
 [Landsat (`landsat`) objects](oce-demo-6.html)
 
-[![a](http://dankelley.github.io/oce/oce-demo-6-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-6.png)
+[![a]({{ site.url }}/oce/oce-demo-6-thumbnail.png)]({{ site.url }}/oce/oce-demo-6.png)
 
