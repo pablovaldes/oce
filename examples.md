@@ -13,7 +13,7 @@ created it.
 
 ![a](oce-demo-1-thumbnail.png) ... a thumbnail? 1
 
-![a](https://dankelley.github.io/oce/oce-demo-1-thumbnail.png) ... a thumbnail? 2
+![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png) ... a thumbnail? 2
 
 http://dankelley.github.io/oce/oce-demo-1.png ... test 3
 
@@ -21,7 +21,7 @@ http://dankelley.github.io/oce/oce-demo-1.png ... test 3
 
 Code Link | Example
 --------- | -------
-[`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbnail.png)](oce-demo-1.png)
+[`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbmail.png)](oce-demo-1.png)
 
 <table class="galleryitem">
     <tr><td><a href="oce-demo-1.html">CTD</a></td></tr>
