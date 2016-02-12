@@ -11,7 +11,7 @@ created it.
 
 **FIXME: describe below**
 
-![a](http://dankelley.github.io/oce/oce-demo-1-thumbnail.png) ... a thumbnail? 
+![a](http://dankelley.github.io/oce/oce-demo-1-thumbnail.png) ... a thumbnail? 2
 
 Code Link | Example
 --------- | -------
