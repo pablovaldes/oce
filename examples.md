@@ -14,7 +14,6 @@ created it.
 [![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png)
 
 
-
 [Acoustic Doppler Profiler (`adp`) objects](oce-demo-2.html)
 
 [![a](http://dankelley.github.io/oce/oce-demo-2-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-2.png)
@@ -34,6 +33,8 @@ created it.
 
 [![a](http://dankelley.github.io/oce/oce-demo-5-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-5.png)
 
+
 [Landsat (`landsat`) objects](oce-demo-6.html)
 
 [![a](http://dankelley.github.io/oce/oce-demo-6-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-6.png)
+
