@@ -17,3 +17,4 @@ Rplots.pdf
 create_data
 autom4te.cache
 *.nc
+vignettes/oce.html
