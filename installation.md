@@ -50,7 +50,7 @@ users.
 files, rename the resultant directories to `oce` and `ocedata` and then execute
 the OS commands stated below.
 
-```bash
+    ```bash
 R CMD build oce
 R CMD install oce_0.9-18.tar.gz # adjust version as needed
 R CMD build ocedata
