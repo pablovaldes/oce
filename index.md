@@ -5,7 +5,7 @@ title: Overview
 submenu: home
 ---
 
-Oce is a package for the <a href="http://www.r-project.org/">R statistical
+oOce is a package for the <a href="http://www.r-project.org/">R statistical
     language</a> that helps Oceanographers do their work by providing functions
 to read Oceanographic data files, to process the data in instrument-specific
 ways, and to represent the results with plots that follow Oceanographic
