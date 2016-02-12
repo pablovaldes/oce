@@ -34,6 +34,6 @@ created it.
 
 [![a](http://dankelley.github.io/oce/oce-demo-5-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-5.png)
 
-[Landsat (`landsat`) objects](oce-demo-5.html)
+[Landsat (`landsat`) objects](oce-demo-6.html)
 
 [![a](http://dankelley.github.io/oce/oce-demo-6-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-6.png)
