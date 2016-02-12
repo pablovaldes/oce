@@ -29,9 +29,13 @@ experiencing has already been reported. Imagine yourself scanning the titles of
 dozens of issues.  Specific titles will be more useful to you than vague ones;
 "plotting problem" tells you almost nothing, while "plotTS() isopcynals are
 misplaced" is probably enough to tell you if you should investigate that report
-in more detail. Resist the urge to put multiple issues in one report.
+in more detail.
 
-4. **What to include within an issue report.** It is helpful if bug reports
+4. **Should there be sub-issues?** This is usually a bad idea, since focused
+   issues are easier for the developers to address, and much more helpful to
+other users who have similar interests.
+
+5. **What to include within an issue report.** It is helpful if bug reports
    contain (a) test code that demonstrates the problem but does very little
 else, (b) a statement of the expected result, (c) a statement of the actual
 result, (d) the output from the R command `sessionInfo()`. For bugs that either
@@ -39,7 +43,7 @@ involve plotting, or can be illustrated cleanly with a plot, an image produced
 by the test code can be included in the issue by dragging and dropping the
 image file on the edit box.
 
-5. **How can data files be connected to issues?** First, consider whether you
+6. **How can data files be connected to issues?** First, consider whether you
    can demonstrate your bug without using a data file. Please see whether one
 of the built-in datasets (in `oce` or `ocedata`) can be used; that way, other
 users can reproduce your problem, and may be able to help. If that fails, you
@@ -47,7 +51,7 @@ may put your data onto Dropbox or some similar site.  Quite often, though, the
 datasets are private, and in that case, please send a private email to Dan, who
 can assure that your data remain private.
 
-6. **When to close an issue.** Issues should be closed when the concern, as
+7. **When to close an issue.** Issues should be closed when the concern, as
    described in the title, has been addressed. To return to the `plotTS()`
 example, the issue would be closed when the isopycnal line placement is
 rectified. (See the next item, regarding tangential issues.) By convention, the
