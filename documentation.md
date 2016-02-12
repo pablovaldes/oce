@@ -21,7 +21,7 @@ Oce.  His upcoming textbook, entitled *Oceanographic Analysis with R*, deals
 extensively with Oce.  A provisional table of contents of that book is given
 below.
 
-[toc 1]({{ site.url }}/oce/web/oar-toc-1.png)
+![toc 1]({{ site.url }}/oce/web/oar-toc-1.png)
 
-[toc 2]({{ site.url }}/oce/web/oar-toc-2.png)
+![toc 2]({{ site.url }}/oce/web/oar-toc-2.png)
 
