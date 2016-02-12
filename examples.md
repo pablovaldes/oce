@@ -5,9 +5,14 @@ title: Examples
 submenu: examples
 ---
 
-The images shown below illustrate a few of the things Oce can do; click on
-an image to enlarge it, or click the title above the image to see the R code
-that created it.
+The images shown below illustrate a few of the things Oce can do; click on an
+image to enlarge it, or click the title above the image to see the R code that
+created it.
+
+**FIXME: describe below**
+
+| Class | Code Link | Example |
+| `ctd` | [`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbnail.png)](oce-demo-1.png) |
 
 <table class="galleryitem">
     <tr><td><a href="oce-demo-1.html">CTD</a></td></tr>
