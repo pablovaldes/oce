@@ -15,6 +15,10 @@ created it.
 
 ![a](https://dankelley.github.io/oce/oce-demo-1-thumbnail.png) ... a thumbnail? 2
 
+http://dankelley.github.io/oce/oce-demo-1.png ... test 3
+
+![a](http://dankelley.github.io/oce/oce-demo-1.png) ... test 4
+
 Code Link | Example
 --------- | -------
 [`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbnail.png)](oce-demo-1.png)
