@@ -26,7 +26,7 @@ created it.
 
 [Echosounder (`echosounder`) objects](oce-demo-4.html)
 
-[![a](http://dankelley.github.io/oce/oce-demo-4-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-4.png)
+[![a]({{ site.url }}/oce/oce-demo-4-thumbnail.png)](http://dankelley.github.io/oce/oce-demo-4.png)
 
 
 [Coastline (`coastline`) objects](oce-demo-5.html)
