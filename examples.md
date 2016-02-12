@@ -12,7 +12,7 @@ created it.
 **FIXME: describe below**
 
 Class | Code Link | Example
-------|-----------|--------
+----- | --------- | -------
 `ctd` | [`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbnail.png)](oce-demo-1.png)
 
 <table class="galleryitem">
