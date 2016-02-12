@@ -11,8 +11,8 @@ created it.
 
 **FIXME: describe below**
 
-blah | foo
-foobar | [![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png) .. test 1
+**Class** | **Sample**
+[`ctd`](oce-demo-1.html) | [![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png) .. test 1
 
 
 Code Link | Example
