@@ -11,13 +11,9 @@ created it.
 
 **FIXME: describe below**
 
-![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png) ... test 1
+blah | foo
+foobar | [![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png) .. test 1
 
-[![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png) ... test 2
-
-http://dankelley.github.io/oce/oce-demo-1.png ... test 3
-
-![a](http://dankelley.github.io/oce/oce-demo-1.png) ... test 4
 
 Code Link | Example
 --------- | -------
