@@ -15,7 +15,6 @@ but powerful enough for experts.
 
 Oce makes heavy use of the R notion of *generic functions*, so that a single
 function call works across a wide range of data types.  For example,
-
 ```r
 library(oce)
 d <- read.oce("file")
