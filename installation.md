@@ -60,7 +60,7 @@ R CMD install ocedata_0.1.4.gz  # adjust version as needed
     A similar procedure works for the zip files for
     [oce](http://github.com/dankelley/oce/zipball/develop)
     and
-    [ocedata](http://github.com/dankelley/ocedata/zipball/master)).
+    [ocedata](http://github.com/dankelley/ocedata/zipball/master).
 
 2.  Acquire the sources through Git using
 

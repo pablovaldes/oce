@@ -5,9 +5,9 @@ title: Examples
 submenu: examples
 ---
 
-<p>The images shown below illustrate a few of the things Oce can do; click on
+The images shown below illustrate a few of the things Oce can do; click on
 an image to enlarge it, or click the title above the image to see the R code
-that created it.</p>
+that created it.
 
 <table class="galleryitem">
     <tr><td><a href="oce-demo-1.html">CTD</a></td></tr>
