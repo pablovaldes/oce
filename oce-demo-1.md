@@ -4,9 +4,9 @@ title: oce demo 1
 layout: default
 ---
 
-{% highlight splus %}
+```r
 library(oce)
 data(ctd)
 plot(ctd, which=c(1,2,3,5), fill="lightgray")
-{% endhighlight %}
+```
 

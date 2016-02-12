@@ -4,9 +4,9 @@ title: oce demo 4
 layout: default
 ---
 
-{% highlight splus %}
+```r
 library(oce)
 data(echosounder)
 plot(echosounder, which=2, drawTimeRange=TRUE, drawBottom=TRUE)
-{% endhighlight %}
+```
 

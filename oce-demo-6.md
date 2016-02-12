@@ -4,10 +4,9 @@ title: oce demo 6
 layout: default
 ---
 
-{% highlight splus %}
-library(ocedata)
+```r
 library(oce)
+library(ocedata)
 data(landsat)
 plot(landsat)
-{% endhighlight %}
-
+```

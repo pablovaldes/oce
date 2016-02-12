@@ -4,9 +4,9 @@ title: oce demo 2
 layout: default
 ---
 
-{% highlight splus %}
+```r
 library(oce)
 data(adp)
 plot(adp)
-{% endhighlight %}
+```
 
