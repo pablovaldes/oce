@@ -9,11 +9,8 @@ The images shown below illustrate a few of the things Oce can do; click on an
 image to enlarge it, or click the title above the image to see the R code that
 created it.
 
-**FIXME: describe below**
-
-**Class** | **Sample**
---------- | ----------
-[`ctd`](oce-demo-1.html) | [![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png) .. test 1
+[`ctd`](oce-demo-1.html)
+![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png)
 
 
 Code Link | Example
