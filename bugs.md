@@ -6,7 +6,7 @@ submenu: bugs
 ---
 
 A simple way to report a bug is to email a report to
-[Dan.Kelley@Dal.Ca](mailto:dan.kelley@dal.ca).  However, people who are
+[Dan.Kelley@Dal.Ca](mailto:dan.kelley@dal.ca?Subject=oce issue).  However, people who are
 comfortable with web interfaces are highly encouraged to instead use the [Oce
 development site](http://github.com/dankelley/oce/issues) to report bugs,
 because that makes it much easier to track the bug fix.  The development site
