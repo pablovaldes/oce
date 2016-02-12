@@ -32,7 +32,7 @@ misplaced" is probably enough to tell you if you should investigate that report
 in more detail.
 
 4. **Should there be sub-issues?** This is usually a bad idea, since focused
-   issues are easier for the developers to address, and much more helpful to
+   issues are easier for the developers to address, and more helpful to
 other users who have similar interests.
 
 5. **What to include within an issue report.** It is helpful if bug reports
@@ -48,8 +48,9 @@ image file on the edit box.
 of the built-in datasets (in `oce` or `ocedata`) can be used; that way, other
 users can reproduce your problem, and may be able to help. If that fails, you
 may put your data onto Dropbox or some similar site.  Quite often, though, the
-datasets are private, and in that case, please send a private email to Dan, who
-can assure that your data remain private.
+datasets are private, and in that case, please send a private email to
+[Dan.Kelley@Dal.Ca](mailto:dan.kelley@dal.ca?Subject=oce private data), who can
+assure that your data remain private.
 
 7. **When to close an issue.** Issues should be closed when the concern, as
    described in the title, has been addressed. To return to the `plotTS()`
