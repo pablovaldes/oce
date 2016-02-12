@@ -52,7 +52,7 @@ the OS commands stated below.
 
     ```bash
 R CMD build oce
-R CMD install oce_0.9-18.tar.gz # adjust version as needed
+R CMD install oce_0.9-19.tar.gz # adjust version as needed
 R CMD build ocedata
 R CMD install ocedata_0.1.4.gz  # adjust version as needed
 ```
@@ -64,14 +64,14 @@ R CMD install ocedata_0.1.4.gz  # adjust version as needed
 
 2.  Acquire the sources through Git using
 
-```bash
+    ```bash
 git clone https://dankelley@github.com/dankelley/oce.git
 git clone https://dankelley@github.com/dankelley/ocedata.git
 ```
     and then build them as described in step 1.
 3.  Download and build using `install_github()`
 
-```R
+    ```R
 library(devtools)
 install_github("dankelley/oce", ref="develop")
 install_github("dankelley/ocedata", ref="master")
