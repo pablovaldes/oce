@@ -13,7 +13,7 @@ created it.
 
 ![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png) ... test 1
 
-[![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](google.com) ... test 2
+[![a](http://dankelley.github.io/oce/oce-demo-1-thumbmail.png)](http://dankelley.github.io/oce/oce-demo-1.png) ... test 2
 
 http://dankelley.github.io/oce/oce-demo-1.png ... test 3
 
