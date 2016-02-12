@@ -11,9 +11,11 @@ created it.
 
 **FIXME: describe below**
 
-Class | Code Link | Example
------ | --------- | -------
-`ctd` | [`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbnail.png)](oce-demo-1.png)
+![a](oce-demo-1-thumbnail.png) ... a thumbnail?
+
+Code Link | Example
+--------- | -------
+[`ctd`](oce-demo-1.html) | [![a](oce-demo-1-thumbnail.png)](oce-demo-1.png)
 
 <table class="galleryitem">
     <tr><td><a href="oce-demo-1.html">CTD</a></td></tr>
