@@ -5,16 +5,17 @@ title: Overview
 submenu: home
 ---
 
-Oce is a package for the [href="http://www.r-project.org](R statistical
-language) that helps Oceanographers do their work by providing functions to
-read Oceanographic data files, to process the data in instrument-specific ways,
-and to represent the results with plots that follow Oceanographic convention.
+Oce is a package for the [http://www.r-project.org](R statistical language)
+that helps Oceanographers do their work by providing functions to read
+Oceanographic data files, to process the data in instrument-specific ways, and
+to represent the results with plots that follow Oceanographic convention.
 
 Developed in university and research settings, Oce is simple enough for novices
 but powerful enough for experts.
 
 Oce makes heavy use of the R notion of *generic functions*, so that a single
 function call works across a wide range of data types.  For example,
+
 ```r
 library(oce)
 d <- read.oce("file")
