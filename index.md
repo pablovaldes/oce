@@ -15,11 +15,13 @@ but powerful enough for experts.
 
 Oce makes heavy use of the R notion of *generic functions*, so that a single
 function call works across a wide range of data types.  For example,
+
 ```r
 library(oce)
 d <- read.oce("file")
 plot(d)
 ```
+
 will produce a useful plot that is tailored to the type of data stored in the
 file named `file`.  For example, if `file` contains CTD data, then the
 `read.oce()` function will return an object of class `ctd`, causing `plot()` to
