@@ -957,6 +957,7 @@ setMethod(f="plot",
                               coastline=c("best", "coastlineWorld", "coastlineWorldMedium",
                                           "coastlineWorldFine", "none"),
                               xlim=NULL, ylim=NULL,
+                              add=FALSE,
                               map.xlim=NULL, map.ylim=NULL,
                               clongitude, clatitude, span,
                               projection=NULL,
@@ -977,6 +978,8 @@ setMethod(f="plot",
                               ...)
           {
               debug <- if (debug > 4) 4 else floor(0.5 + debug)
+              if (!is.logical(add))
+                  stop("In plot() : 'add' argument must be logical", call.=FALSE)
               ##> message("section.R:434, station 1 pressure: ",
               ##>         paste(x@data$station[[1]]@data$pressure, collapse=" "))
               xtype <- match.arg(xtype)
@@ -1047,8 +1050,8 @@ setMethod(f="plot",
                                          variable="temperature", vtitle="T", unit=NULL,
                                          eos=getOption("oceEOS", default="gsw"),
                                          indicate.stations=TRUE, contourLevels=NULL, contourLabels=NULL,
-                                         xlim=NULL,
-                                         ylim=NULL,
+                                         xlim=NULL, ylim=NULL,
+                                         add=FALSE,
                                          clongitude, clatitude, span,
                                          projection=NULL,
                                          zbreaks=NULL, zcol=NULL,
@@ -1253,46 +1256,50 @@ setMethod(f="plot",
                                              gettext("Latitude", domain="R-oce"),
                                              gettext("Time", domain="R-oce"))
                           }
-                          plot(xxrange, yyrange,
-                               xaxs="i", yaxs="i",
-                               xlim=xlim,
-                               ylim=ylim,
-                               col="white",
-                               xlab=xlab,
-                               ylab=ylab,
-                               axes=FALSE)
-                          if (axes) {
-                              oceDebug(debug, "drawing axes\n")
-                              axis(4, labels=FALSE)
-                              ytics <- axis(2, labels=FALSE)
-                              axis(2, at=ytics, labels=-ytics)
-                              ## If constructing labels for time, need to check xlim
-                              if (xIsTime) {
-                                  if (!is.null(xlim)) {
-                                      ## FIXME: might need to check whether/how xx used later
-                                      XX <- xx[xlim[1] <= xx & xx <= xlim[2]]
-                                      axis(1, at=pretty(XX), labels=pretty(XX))
+                          if (!add) {
+                              plot(xxrange, yyrange,
+                                   xaxs="i", yaxs="i",
+                                   xlim=xlim,
+                                   ylim=ylim,
+                                   col="white",
+                                   xlab=xlab,
+                                   ylab=ylab,
+                                   axes=FALSE)
+                              if (axes) {
+                                  oceDebug(debug, "drawing axes\n")
+                                  axis(4, labels=FALSE)
+                                  ytics <- axis(2, labels=FALSE)
+                                  axis(2, at=ytics, labels=-ytics)
+                                  ## If constructing labels for time, need to check xlim
+                                  if (xIsTime) {
+                                      if (!is.null(xlim)) {
+                                          ## FIXME: might need to check whether/how xx used later
+                                          XX <- xx[xlim[1] <= xx & xx <= xlim[2]]
+                                          axis(1, at=pretty(XX), labels=pretty(XX))
+                                      } else {
+                                          axis(1, at=pretty(xx), labels=pretty(xx))
+                                      }
                                   } else {
-                                      axis(1, at=pretty(xx), labels=pretty(xx))
+                                      axis(1)
                                   }
-                              } else {
-                                  axis(1)
                               }
+                              box()
                           }
-                          box()
                       } else {
-                          plot(xxrange, yyrange,
-                               xaxs="i", yaxs="i",
-                               ##                     ylim=rev(yyrange),
-                               xlim=xlim, ylim=ylim,
-                               col="white",
-                               xlab="", ylab=ylab, axes=FALSE)
-                          if (axes) {
-                              axis(1, at=at, labels=labels)
-                              axis(2)
-                              axis(4, labels=FALSE)
+                          if (!add) {
+                              plot(xxrange, yyrange,
+                                   xaxs="i", yaxs="i",
+                                   ##                     ylim=rev(yyrange),
+                                   xlim=xlim, ylim=ylim,
+                                   col="white",
+                                   xlab="", ylab=ylab, axes=FALSE)
+                              if (axes) {
+                                  axis(1, at=at, labels=labels)
+                                  axis(2)
+                                  axis(4, labels=FALSE)
+                              }
+                              box()
                           }
-                          box()
                       }
                       ## Bottom trace
                       usr <- par("usr")
@@ -1476,7 +1483,7 @@ setMethod(f="plot",
                               }
                           }
                       }
-                      if (is.character(showBottom) || showBottom) {
+                      if (is.character(showBottom) || showBottom && !add) {
                           type <- "polygon"
                           if (is.character(showBottom))
                               type <- showBottom
@@ -1495,7 +1502,7 @@ setMethod(f="plot",
                           box()
                       }
                       ##axis(1, pretty(xxOrig))
-                      if (axes) {
+                      if (axes && !add) {
                           if (xIsTime) {
                               if (!is.null(xlim)) {
                                   ## FIXME: might need to check whether/how xx used later
