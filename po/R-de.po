@@ -685,10 +685,10 @@ msgid "length of 'file' must equal length of 'start', but they are"
 msgstr ""
 
 msgid "and"
-msgstr ""
+msgstr "und"
 
 msgid "respectively"
-msgstr ""
+msgstr "beziehungsweise"
 
 msgid ""
 "cannot infer coordinate system, etc., since header=FALSE; see documentation."
