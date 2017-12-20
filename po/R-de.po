@@ -20,7 +20,7 @@ msgid "\" in this"
 msgstr ""
 
 msgid "object"
-msgstr ""
+msgstr "objekt"
 
 msgid "method is only for oce objects"
 msgstr ""
