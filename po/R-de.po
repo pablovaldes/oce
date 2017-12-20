@@ -339,7 +339,7 @@ msgid "unknown originalCoordinate"
 msgstr ""
 
 msgid "unknown frequency"
-msgstr ""
+msgstr "unbekannte Frequenz"
 
 msgid ""
 "(only understand 1MHz and 2MHz); using 2Mhz formula to calculate cell size"
