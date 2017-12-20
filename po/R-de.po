@@ -38,7 +38,7 @@ msgid "' not in object's metadata or data$station[[1]]@data"
 msgstr ""
 
 msgid "' not in object"
-msgstr ""
+msgstr "' nicht im Objekt"
 
 msgid "cannot determine time to which to interpolate"
 msgstr ""
@@ -303,7 +303,7 @@ msgid "input must be in enu coordinates, but it is in"
 msgstr ""
 
 msgid "coordinates"
-msgstr ""
+msgstr "Koordinaten"
 
 msgid "there is no bottom velocity in this object"
 msgstr ""
