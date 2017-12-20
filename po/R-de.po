@@ -2950,7 +2950,7 @@ msgid "miscount in angles"
 msgstr ""
 
 msgid "windrose"
-msgstr ""
+msgstr "Windrose"
 
 msgid "'col' should be a list of 4 colours"
 msgstr ""
