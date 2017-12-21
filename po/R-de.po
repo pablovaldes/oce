@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "must give 'subset'"
-msgstr ""
+msgstr "'subset' einfügen"
 
 msgid "there is no item named \""
 msgstr ""
@@ -26,10 +26,10 @@ msgid "method is only for oce objects"
 msgstr ""
 
 msgid "must supply 'x'"
-msgstr ""
+msgstr "'x' einfügen"
 
 msgid "must supply 'names'"
-msgstr ""
+msgstr "'names' einfügen"
 
 msgid "'"
 msgstr ""
@@ -660,7 +660,7 @@ msgid "header must be TRUE"
 msgstr ""
 
 msgid "must supply 'to'"
-msgstr ""
+msgstr "sie müssen 'to' einfügen"
 
 msgid ""
 "need at least 2 velocity-system-data chunks to determine the timing; try "
@@ -679,7 +679,7 @@ msgid "'start' must be a string, or a POSIXt time"
 msgstr ""
 
 msgid "must supply deltat, the number of seconds between observations"
-msgstr ""
+msgstr "Sie müssen deltat einfügen, die anzahl der sekunden zwischen den beobachtungen"
 
 msgid "length of 'file' must equal length of 'start', but they are"
 msgstr ""
@@ -771,7 +771,7 @@ msgid "no data in this time interval, starting at time"
 msgstr ""
 
 msgid "must supply \"to\""
-msgstr ""
+msgstr "Sie müssen \"to\" einfügen"
 
 msgid "argument `tsFile' must be a character string or connection"
 msgstr ""
@@ -810,10 +810,10 @@ msgid "cm"
 msgstr ""
 
 msgid "must provide longitude"
-msgstr ""
+msgstr "Sie müssen längengrad einfügen"
 
 msgid "must provide latitude"
-msgstr ""
+msgstr "Sie müssen breitengrad einfügen"
 
 msgid "Lengths of longitude and latitude must be equal"
 msgstr ""
@@ -901,10 +901,10 @@ msgid ", which does not match file value"
 msgstr ""
 
 msgid "must give z, zlim or breaks"
-msgstr ""
+msgstr "Sie müssen z, zlim oder breaks einfügen"
 
 msgid "must give z or zlim if length(breaks)=1"
-msgstr ""
+msgstr "Sie müssen z oder zlim falls length(breaks)=1"
 
 msgid "cannot supply 'col' and 'colormap' at the same time"
 msgstr ""
@@ -922,7 +922,7 @@ msgid "mismatched lengths of x0 and col1 ("
 msgstr ""
 
 msgid "must give either 'file' or 'text'"
-msgstr ""
+msgstr "Sie müssen 'file' oder 'text' einfügen"
 
 msgid "cannot decode \"F\" from \""
 msgstr ""
@@ -949,7 +949,7 @@ msgid "cannot infer zlim; please specify zlim, breaks, name, or z"
 msgstr ""
 
 msgid "must supply \"z\" if length(breaks)==1"
-msgstr ""
+msgstr "Sie müssen \"z\" einfügen falls length(breaks)==1"
 
 msgid ""
 "must give \"breaks\" or \"name\", or each of \"x0\", \"x1\", \"col0\", and "
@@ -1021,7 +1021,7 @@ msgid "data to match existing object"
 msgstr ""
 
 msgid "must supply \"name\""
-msgstr ""
+msgstr "Sie müssen \"name" einfügen"
 
 msgid "unknown method \""
 msgstr ""
@@ -1332,19 +1332,19 @@ msgid "must install.packages(\"ncdf4\") to read drifter data"
 msgstr ""
 
 msgid "must give time"
-msgstr ""
+msgstr "Zeit einfügen"
 
 msgid "must give longitude"
-msgstr ""
+msgstr "Längengrad einfügen"
 
 msgid "must give latitude"
-msgstr ""
+msgstr "Breitengrad einfügen"
 
 msgid "must give temperature"
-msgstr ""
+msgstr "Temperatur einfügen"
 
 msgid "must give salinity"
-msgstr ""
+msgstr "Salzgehalt einfügen"
 
 msgid "drifter"
 msgstr ""
@@ -1427,10 +1427,10 @@ msgid "x must be a matrix, not an array with dim(x) = c("
 msgstr ""
 
 msgid "must supply y"
-msgstr ""
+msgstr "Sie müssen y einfügen"
 
 msgid "must supply z"
-msgstr ""
+msgstr "Sie müssen z einfügen"
 
 msgid "decimate must be a positive integer or a logical value"
 msgstr ""
