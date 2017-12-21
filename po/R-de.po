@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "must give 'subset'"
-msgstr "'subset' einfügen"
+msgstr "Sie müssen 'subset' einfügen"
 
 msgid "there is no item named \""
 msgstr ""
@@ -26,10 +26,10 @@ msgid "method is only for oce objects"
 msgstr ""
 
 msgid "must supply 'x'"
-msgstr "'x' einfügen"
+msgstr "Sie müssen 'x' einfügen"
 
 msgid "must supply 'names'"
-msgstr "'names' einfügen"
+msgstr "Sie müssen 'names' einfügen"
 
 msgid "'"
 msgstr ""
@@ -988,10 +988,10 @@ msgid ""
 msgstr ""
 
 msgid "must give temperature or CT"
-msgstr ""
+msgstr "Sie müssen Temperatur oder CT einfügen"
 
 msgid "must give pressure"
-msgstr ""
+msgstr "Sie müssen Druck einfügen"
 
 msgid "SA and CT must both be supplied, if either is"
 msgstr ""
@@ -1491,7 +1491,7 @@ msgid "landsat-5 is not converted AT ALL"
 msgstr ""
 
 msgid "unknown satellite:"
-msgstr ""
+msgstr "unbekannter Satellit"
 
 msgid "this landsat object lacks a band named \""
 msgstr ""
@@ -1553,7 +1553,7 @@ msgid "Laser Trans. Sensor"
 msgstr ""
 
 msgid "Voltage"
-msgstr ""
+msgstr "Elektrische Spannung"
 
 msgid "Ext. Aux. Input"
 msgstr ""
@@ -1673,7 +1673,7 @@ msgid "too few data to trim rsk record"
 msgstr ""
 
 msgid "Unknown method"
-msgstr ""
+msgstr "Unbekannte Methode"
 
 msgid ""
 "mapAxis(side=1) cannot draw latitude labels yet; contact author if you need "
@@ -1830,13 +1830,13 @@ msgid "length of 'v' must match length of 'time'"
 msgstr ""
 
 msgid "must supply u"
-msgstr ""
+msgstr "Sie müssen u einfügen"
 
 msgid "must supply v"
-msgstr ""
+msgstr "Sie müssen v einfügen"
 
 msgid "must supply x"
-msgstr ""
+msgstr "Sie müssen x einfügen"
 
 msgid "length(x) must exceed 1 but it is"
 msgstr ""
@@ -1863,16 +1863,16 @@ msgid "method must be 1 or 2"
 msgstr ""
 
 msgid "must supply 'f'"
-msgstr ""
+msgstr "Sie müssen 'f' einfügen"
 
 msgid "must supply 'FUN'"
-msgstr ""
+msgstr "Sie müssen 'FUN' einfügen"
 
 msgid "'FUN' must be a function"
 msgstr ""
 
 msgid "must supply 'y'"
-msgstr ""
+msgstr "Sie müssen 'y' einfügen"
 
 msgid "lengths of x and y must agree"
 msgstr ""
@@ -1896,25 +1896,25 @@ msgid "must have xinc > 0"
 msgstr ""
 
 msgid "must provide x"
-msgstr ""
+msgstr "Sie müssen x einfügen"
 
 msgid "must provide y"
-msgstr ""
+msgstr "Sie müssen z einfügen"
 
 msgid "must provide z"
 msgstr ""
 
 msgid "must provide f"
-msgstr ""
+msgstr "Sie müssen f einfügen"
 
 msgid "must provide xout"
-msgstr ""
+msgstr "Sie müssen xout einfügen"
 
 msgid "must provide yout"
-msgstr ""
+msgstr "Sie müssen yout einfügen"
 
 msgid "must provide zout"
-msgstr ""
+msgstr "Sie müssen zout einfügen"
 
 msgid "x values must be equi-spaced"
 msgstr ""
@@ -1962,7 +1962,7 @@ msgid "must give argument 't0'"
 msgstr ""
 
 msgid "must give x"
-msgstr ""
+msgstr "Sie müssen x einfügen"
 
 msgid "x and y must be of same length, but they are"
 msgstr ""
@@ -1971,7 +1971,7 @@ msgid "cannot have x[1] == x[n]"
 msgstr ""
 
 msgid "must give min and max"
-msgstr ""
+msgstr "Sie müssen min und max einfügen"
 
 msgid "unknown reference"
 msgstr ""
@@ -2000,7 +2000,7 @@ msgid "matrixSmooth given passes<=0, so returning matrix unmodified"
 msgstr ""
 
 msgid "must provide \"input\""
-msgstr ""
+msgstr "Sie müssen \"input\" einfügen"
 
 msgid "must provide at least one byte to match"
 msgstr ""
@@ -2153,16 +2153,16 @@ msgid "m must be odd"
 msgstr ""
 
 msgid "must supply b"
-msgstr ""
+msgstr "Sie müssen b einfügen"
 
 msgid "must provide lat"
-msgstr ""
+msgstr "Sie müssen lat einfügen"
 
 msgid "must provide lat.ref"
-msgstr ""
+msgstr "Sie müssen lat.ref einfügen"
 
 msgid "must provide lon.ref"
-msgstr ""
+msgstr "Sie müssen lon.ref einfügen"
 
 msgid "lat.ref must be finite"
 msgstr ""
@@ -2259,7 +2259,7 @@ msgid "smoothing does not work (yet) for objects of class"
 msgstr ""
 
 msgid "must supply ci"
-msgstr ""
+msgstr "ci einfügen"
 
 msgid "ci must contain 2 or 3 elements"
 msgstr ""
@@ -2286,10 +2286,10 @@ msgid "as a time interval because it has more than 2 colons"
 msgstr ""
 
 msgid "must give h"
-msgstr ""
+msgstr "Sie müssen h einfügen"
 
 msgid "must give y"
-msgstr ""
+msgstr "Sie müssen y einfügen"
 
 msgid "length of x ("
 msgstr ""
@@ -2307,13 +2307,13 @@ msgid "must supply month, day, hour, min, sec, and tz"
 msgstr ""
 
 msgid "must give 't'"
-msgstr ""
+msgstr "Sie müssen 't' einfügen"
 
 msgid "must give 'longitude'"
-msgstr ""
+msgstr "Sie müssen 'longitude' einfügen"
 
 msgid "must give 'latitude'"
-msgstr ""
+msgstr "Sie müssen 'latitude' einfügen"
 
 msgid "t must be in UTC"
 msgstr ""
@@ -2346,10 +2346,10 @@ msgid "cannot handle deltat yet"
 msgstr ""
 
 msgid "must provide start"
-msgstr ""
+msgstr "start einfügen"
 
 msgid "must provide end"
-msgstr ""
+msgstr "end einfügen"
 
 msgid "lengths of 'start' and 'end' must match"
 msgstr ""
@@ -2370,10 +2370,10 @@ msgid "unknown value of which \""
 msgstr ""
 
 msgid "must supply 'r'"
-msgstr ""
+msgstr "Sie müssen 'r' einfügen"
 
 msgid "must supply 'theta'"
-msgstr ""
+msgstr "Sie müssen 'theta' einfügen"
 
 msgid ") and y ("
 msgstr ""
@@ -2708,7 +2708,7 @@ msgid "overlap cannot exceed segment length"
 msgstr ""
 
 msgid "must provide t"
-msgstr ""
+msgstr "Sie müssen t einfügen"
 
 msgid "t must be POSIXt or a number corresponding to POSIXt (in UTC)"
 msgstr ""
@@ -2770,7 +2770,7 @@ msgid "lengths of temperature and p arrays must agree, but they are"
 msgstr ""
 
 msgid "must provide salinity"
-msgstr ""
+msgstr "salzgehalt einfügen"
 
 msgid "lengths of salinity and rho must agree, but they are"
 msgstr ""
@@ -2779,7 +2779,7 @@ msgid "lengths of salinity and pressure must agree, but they are"
 msgstr ""
 
 msgid "must provide temperature"
-msgstr ""
+msgstr "temperatur einfügen"
 
 msgid "lengths of salinity and temperature must agree, but they are"
 msgstr ""
@@ -2814,10 +2814,10 @@ msgid ""
 msgstr ""
 
 msgid "must provide a1"
-msgstr ""
+msgstr "a1 einfügen"
 
 msgid "must provide a2"
-msgstr ""
+msgstr "a2 einfügen"
 
 msgid "length(a2) must match length(a1)"
 msgstr ""
@@ -2890,10 +2890,10 @@ msgid "the subset must be based on longitude or latitude"
 msgstr ""
 
 msgid "must supply longitude"
-msgstr ""
+msgstr "Längengrad einfügen"
 
 msgid "must supply latitude"
-msgstr ""
+msgstr "Breitengrad einfügen"
 
 msgid "must supply topo"
 msgstr ""
