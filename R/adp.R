@@ -306,13 +306,13 @@ setMethod(f="summary",
               if ("filename" %in% mnames)
                   cat(sprintf("* Source filename:    ``%s  \n", object@metadata$filename), ...)
               if ("latitude" %in% names(object@metadata)) {
-                  cat(paste0("* Location:           ",
+                  cat(paste("* Location:           ",
                             if (is.na(object@metadata$latitude)) "unknown latitude" 
                                       else sprintf("%.5f N", object@metadata$latitude), 
                              ", ",
                             if (is.na(object@metadata$longitude)) "unknown longitude" 
                                       else sprintf("%.5f E", object@metadata$longitude),
-                            "\n"))
+                            "\n"), sep="")
               }
               v.dim <- dim(object@data$v)
               cat("* Number of profiles:", v.dim[1], "\n")
@@ -370,12 +370,17 @@ setMethod(f="summary",
                           1 / subsampleDeltat))
               if (object@metadata$numberOfCells > 1)
                   cat(sprintf("* Cells:              %d, centered at %.3f m to %.3f m, spaced by %.3f m\n",
-                              object@metadata$numberOfCells, object@data$distance[1],  tail(object@data$distance, 1), diff(object@data$distance[1:2])),  ...)
+                              object@metadata$numberOfCells, 
+                              object@data$distance[1],  
+                              tail(object@data$distance, 1), 
+                              diff(object@data$distance[1:2])),  ...)
               else
                   cat(sprintf("* Cells:              one cell, centered at %.3f m\n", object@data$distance[1]), ...)
 
-              cat("* Coordinate system: ", object@metadata$originalCoordinate, "[originally],", object@metadata$oceCoordinate, "[presently]\n", ...)
-              cat("* Frequency:         ", object@metadata$frequency, "kHz\n", ...)
+              cat(sprintf("* Coordinate system: %s [originally] %s [presently]\n", 
+                          object@metadata$originalCoordinate, 
+                          object@metadata$oceCoordinate), ...)
+              cat(sprintf("* Frequency:         %s Khz\n", object@metadata$frequency), ...)
               if ("oceBeamUnspreaded" %in% mnames)
                   cat("* Beams:             ", object@metadata$numberOfBeams, if (!is.null(object@metadata$oceBeamUnspreaded) &
                                                                                   object@metadata$oceBeamUnspreaded) "beams (attenuated)" else "beams (not attenuated)",
@@ -2506,7 +2511,7 @@ beamToXyzAdp <- function(x, debug=getOption("oceDebug"))
         stop("adp type must be either \"rdi\" or \"nortek\" or \"sontek\"")
     }
     res@metadata$oceCoordinate <- "xyz"
-    res@processingLog <- processingLogAppend(res@processingLog, paste(deparse(match.call()), sep="", collapse=""))
+    res@processingLog <- processingLogAppend(res@processingLog, paste0(deparse(match.call()), collapse=""))
     oceDebug(debug, "} # beamToXyzAdp()\n", unindent=1)
     res
 }
@@ -2749,7 +2754,7 @@ xyzToEnuAdp <- function(x, declination=0, debug=getOption("oceDebug"))
     }
     res@metadata$oceCoordinate <- "enu"
     res@processingLog <- processingLogAppend(res@processingLog,
-                                 paste0("xyzToEnu(x, declination=", declination, ", debug=", debug, ")"))
+                                 sprintf("xyzToEnu(x, declination=%s, debug=%s)", declination, debug))
     oceDebug(debug, "} # xyzToEnuAdp()\n", unindent=1)
     res
 }
@@ -2855,7 +2860,7 @@ peek.ahead <- function(file, bytes=2, debug=!TRUE)
 display.bytes <- function(b, label="", ...)
 {
     n <- length(b)
-    cat("\n", label, " (", n, "bytes)\n", sep="", ...)
+    cat(sprintf("\n%s (%.0f bytes)\n", label, n), sep="", ...)
     print(b, ...)
 }
 
@@ -2889,7 +2894,7 @@ subtractBottomVelocity <- function(x, debug=getOption("oceDebug"))
         res@data$v[,,beam] <- x@data$v[,,beam] - x@data$bv[,beam] 
     }
     oceDebug(debug, "} # subtractBottomVelocity()\n", unindent=1)
-    res@processingLog <- processingLogAppend(res@processingLog, paste(deparse(match.call()), sep="", collapse=""))
+    res@processingLog <- processingLogAppend(res@processingLog, paste0(deparse(match.call()), collapse=""))
     res
 }
 
