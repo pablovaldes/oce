@@ -278,7 +278,7 @@ setMethod(f="plot",
                       ylist <- c(0, r * sin(t[i] - dt2), r * sin(t[i] + dt2), 0)
                       polygon(xlist, ylist,col=col[1], border=col[3])
                   }
-                  title(paste("Counts (max ", max, ")", sep=""))
+                  title(paste0("Counts (max ", max, ")"))
               } else if (type == "mean") {
                   max <- max(x@data$mean, na.rm=TRUE)
                   for (i in 1:nt) {
@@ -288,7 +288,8 @@ setMethod(f="plot",
                       ylist <- c(0, r * sin(t[i] - dt2), r * sin(t[i] + dt2), 0)
                       polygon(xlist, ylist,col=col[1], border=col[3])
                   }
-                  title(paste("Means (max ", sprintf(max, fmt="%.3g"), ")", sep=""))
+                  title(paste0("Means (max ", sprintf(max, fmt="%.3g"), ")"))
+                     ## or title(sprintf("Means (max %.3g)", max)) ?
               } else if (type == "median") {
                   max <- max(x@data$fives[,5], na.rm=TRUE)
                   for (i in 1:nt) {
@@ -298,7 +299,7 @@ setMethod(f="plot",
                       ylist <- c(0, r * sin(t[i] - dt2), r * sin(t[i] + dt2), 0)
                       polygon(xlist, ylist,col=col[1], border=col[3])
                   }
-                  title(paste("Medians (max ", sprintf(max,fmt="%.3g"), ")", sep=""))
+                  title(paste0("Medians (max ", sprintf(max,fmt="%.3g"), ")"))
               } else if (type == "fivenum") {
                   max <- max(x@data$fives[,3], na.rm=TRUE)
                   for (i in 1:nt) {
@@ -315,7 +316,7 @@ setMethod(f="plot",
                       r <- x@data$fivenum[i, 3] / max
                       lines(c(r * cos(tm), r * cos(tp)), c(r * sin(tm), r * sin(tp)), col="blue", lwd=2)
                   }
-                  title(paste("Fiveum (max ", sprintf(max,fmt="%.3g"), ")", sep=""))
+                  title(paste0("Fiveum (max ", sprintf(max,fmt="%.3g"), ")"))
               }
               invisible()
           })
