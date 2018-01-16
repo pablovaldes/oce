@@ -32,7 +32,7 @@ oceDeleteData <- function(object, name)
         stop("oceDeleteData() only works for oce objects")
     if (name %in% names(object@data))
         object@data[[name]] <- NULL
-    object@processingLog <- processingLogAppend(object@processingLog, paste("oceDeleteData() removed data$", name, sep="", collapse=""))
+    object@processingLog <- processingLogAppend(object@processingLog, paste0("oceDeleteData() removed data$", name, collapse=""))
     object
 }
 
@@ -57,7 +57,7 @@ oceSetData <- function(object, name, value, unit, originalName, note="")
     if (nchar(note) > 0)
         object@processingLog <- processingLogAppend(object@processingLog, note)
     else if (!is.null(note))
-        object@processingLog <- processingLogAppend(object@processingLog, paste(deparse(match.call()), sep="", collapse=""))
+        object@processingLog <- processingLogAppend(object@processingLog, paste0(deparse(match.call()), collapse=""))
     if (!missing(unit) && "units" %in% names(object@metadata)) {
         if (!is.list(unit)||2!=length(unit)) stop("'unit' must be a list of length 2")
         if (2 != sum(c("unit", "scale") %in% names(unit))) stop("'unit' must contain 'unit' and 'scale'")
@@ -117,7 +117,8 @@ oceDeleteMetadata <- function(object, name)
         stop("oceDeleteData() only works for oce objects")
     if (name %in% names(object@metadata))
         object@metadata[[name]] <- NULL
-    object@processingLog <- processingLogAppend(object@processingLog, paste0("oceDeleteMetadata() removed metadadata$", name, collapse=""))
+    object@processingLog <- processingLogAppend(object@processingLog, 
+                                                paste0("oceDeleteMetadata() removed metadadata$", name, collapse=""))
     object
 }
 
