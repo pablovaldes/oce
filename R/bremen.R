@@ -121,7 +121,7 @@ setMethod(f="summary",
 
 findInHeaderBremen <- function(key, lines)
 {
-    i <- grep(paste("^", key, sep=""), lines)[1] # only take first -- may be problematic
+    i <- grep(paste0("^", key), lines)[1] # only take first -- may be problematic
     if (length(i) < 1) "" else gsub("^.*=[ ]*", "", lines[i])
 }
 
