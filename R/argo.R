@@ -291,7 +291,7 @@ setMethod(f="subset",
                       ## res@data$salinity <- x@data$salinity[,keep]
                       ## res@data$temperature <- x@data$temperature[,keep]
                       ## res@data$pressure <- x@data$pressure[,keep]
-                      res@processingLog <- processingLogAppend(res@processingLog, paste("subset.argo(x, subset=", subsetString, ")", sep=""))
+                      res@processingLog <- processingLogAppend(res@processingLog, paste0("subset.argo(x, subset=", subsetString, ")"))
                   }
               }
               res
@@ -428,7 +428,8 @@ argoGrid <- function(argo, p, debug=getOption("oceDebug"), ...)
             }
         }
     }
-    res@processingLog <- processingLogAppend(res@processingLog, paste("Grid to regular pressures with: ", deparse(match.call()), sep="", collapse=""))
+    res@processingLog <- processingLogAppend(res@processingLog, 
+                                             paste0("Grid to regular pressures with: ", deparse(match.call()), collapse=""))
     for (w in warningMessages)
         res@processingLog <- processingLogAppend(res@processingLog, w)
     res
@@ -721,17 +722,17 @@ read.argo <- function(file, debug=getOption("oceDebug"), processingLog, ...)
         n <- paste(item, maybeLC("_QC", lc), sep="")
         d <- getData(file, maybeLC(n, lc))
         if (!is.null(d)) res@metadata$flags[[argoDataNames(n)]] <- argoDecodeFlags(d)
-        n <- paste(item, maybeLC("_ADJUSTED", lc), sep="")
+        n <- paste0(item, maybeLC("_ADJUSTED", lc))
         if (n %in% varNames) {
             d <- getData(file, maybeLC(n, lc))
             res@data[[argoDataNames(n)]] <- if (!is.null(d)) d else NULL
         }
-        n <- paste(item, maybeLC("_ADJUSTED_QC", lc), sep="")
+        n <- paste0(item, maybeLC("_ADJUSTED_QC", lc))
         if (n %in% varNames) {
             d <- getData(file, maybeLC(n, lc))
             if (!is.null(d)) res@metadata$flags[[argoDataNames(n)]] <- argoDecodeFlags(d)
         }
-        n <- paste(item, maybeLC("_ADJUSTED_ERROR", lc), sep="")
+        n <- paste0(item, maybeLC("_ADJUSTED_ERROR", lc))
         if (n %in% varNames) {
             d <- getData(file, maybeLC(n, lc))
             res@data[[argoDataNames(n)]] <- if (!is.null(d)) d else NULL
@@ -796,8 +797,8 @@ read.argo <- function(file, debug=getOption("oceDebug"), processingLog, ...)
             res@metadata$units$pressureAdjustedError<- list(unit=expression(dbar), scale="")
     }
     res@processingLog <- if (is.character(file))
-        processingLogAppend(res@processingLog, paste("read.argo(\"", file, "\")", sep=""))
-    else processingLogAppend(res@processingLog, paste(deparse(match.call()), sep="", collapse=""))
+        processingLogAppend(res@processingLog, paste0("read.argo(\"", file, "\")"))
+    else processingLogAppend(res@processingLog, paste0(deparse(match.call()), collapse=""))
     res
 }
 
@@ -867,7 +868,7 @@ as.argo <- function(time, longitude, latitude,
              salinity=list(unit=expression(), scale="PSS-78"), # assuming a particular scale
              temperature=list(unit=expression(degree*C), scale="ITS-90"), # assuming a particular scale
              pressure=list(unit=expression(dbar), scale="")) # assuming a particular unit
-    res@processingLog <- processingLogAppend(res@processingLog, paste(deparse(match.call()), sep="", collapse=""))
+    res@processingLog <- processingLogAppend(res@processingLog, paste0(deparse(match.call()), collapse=""))
     res
 }
 
@@ -1071,7 +1072,7 @@ setMethod(f="plot",
                           ## id <- pmatch(projection, "automatic")
                           if (!is.na(pmatch(projection, "automatic"))) {
                               projection <- if (meanlat > 70)
-                                  paste("+proj=stere +lon_0=", meanlon, sep="") else "+proj=merc"
+                                  paste0("+proj=stere +lon_0=", meanlon) else "+proj=merc"
                               oceDebug(debug, "using", projection, "projection (chosen automatically)\n")
                           } else {
                               oceDebug(debug, "using", projection, "projection (specified)\n")
