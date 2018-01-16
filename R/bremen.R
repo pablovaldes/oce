@@ -121,7 +121,7 @@ setMethod(f="summary",
 
 findInHeaderBremen <- function(key, lines)
 {
-    i <- grep(paste("^", key, sep=""), lines)[1] # only take first -- may be problematic
+    i <- grep(paste0("^", key), lines)[1] # only take first -- may be problematic
     if (length(i) < 1) "" else gsub("^.*=[ ]*", "", lines[i])
 }
 
@@ -170,7 +170,7 @@ read.bremen <- function(file)
     res@metadata$longitude <- longitude
     date <- findInHeaderBremen("Date", h)
     time <- findInHeaderBremen("Time", h)
-    datetime <- paste(date, " ", time, ":00", sep="")
+    datetime <- paste0(date, " ", time, ":00")
     res@metadata$time <- as.POSIXct(datetime, tz="UTC")
     res@metadata$station <- findInHeaderBremen("Station", h)
     res@metadata$profile <- findInHeaderBremen("Profile", h)
