@@ -296,15 +296,15 @@ setMethod(f="summary",
               mnames <- names(object@metadata)
               cat("ADP Summary\n-----------\n\n", ...)
               if ("instrumentType" %in% mnames)
-                  cat(paste("* Instrument:         ", object@metadata$instrumentType, "\n", sep=""), ...)
+                  cat(paste0("* Instrument:         ", object@metadata$instrumentType, "\n"), ...)
               if ("manufacturere" %in% mnames)
                   cat("* Manufacturer:      ", object@metadata$manufacturer, "\n")
               if ("serialNumber" %in% mnames)
-                  cat(paste("* Serial number:      ", object@metadata$serialNumber, "\n", sep=""), ...)
+                  cat(paste0("* Serial number:      ", object@metadata$serialNumber, "\n"), ...)
               if ("firmwareVersion" %in% mnames)
-                  cat(paste("* Firmware version:   ", object@metadata$firmwareVersion, "\n", sep=""), ...)
+                  cat(paste0("* Firmware version:   ", object@metadata$firmwareVersion, "\n"), ...)
               if ("filename" %in% mnames)
-                  cat(paste("* Source filename:    ``", object@metadata$filename, "``\n", sep=""), ...)
+                  cat(paste0("* Source filename:    ``", object@metadata$filename, "``\n"), ...)
               if ("latitude" %in% names(object@metadata)) {
                   cat(paste("* Location:           ",
                             if (is.na(object@metadata$latitude)) "unknown latitude" else sprintf("%.5f N", object@metadata$latitude), ", ",
@@ -1184,7 +1184,7 @@ setMethod(f="plot",
               }
               oceDebug(debug, "plot,adp-method(x, which=\"", paste(which, collapse=","),
                        "\", breaks=", if (missing(breaks)) "(missing)" else 
-                           paste("c(", paste(breaks, collapse=", "), ")", sep=""),
+                           paste0("c(", paste(breaks, collapse=", "), ")"),
                        ", mode=\"", mode, "\", ...) {\n", sep="", unindent=1)
               oceDebug(debug, "par(mar)=", paste(par('mar'), collapse=" "), "\n")
               oceDebug(debug, "par(mai)=", paste(par('mai'), collapse=" "), "\n")
