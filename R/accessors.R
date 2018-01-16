@@ -117,7 +117,7 @@ oceDeleteMetadata <- function(object, name)
         stop("oceDeleteData() only works for oce objects")
     if (name %in% names(object@metadata))
         object@metadata[[name]] <- NULL
-    object@processingLog <- processingLogAppend(object@processingLog, paste("oceDeleteMetadata() removed metadadata$", name, sep="", collapse=""))
+    object@processingLog <- processingLogAppend(object@processingLog, paste0("oceDeleteMetadata() removed metadadata$", name, collapse=""))
     object
 }
 
@@ -131,7 +131,7 @@ oceSetMetadata <- function(object, name, value, note="")
     if (!inherits(object, "oce"))
         stop("oceSetData() only works for oce objects")
     object@metadata[[name]] <- value
-    object@processingLog <- processingLogAppend(object@processingLog, paste(deparse(match.call()), sep="", collapse=""))
+    object@processingLog <- processingLogAppend(object@processingLog, paste0(deparse(match.call()), collapse=""))
     if (nchar(note) > 0)
         object@processingLog <- processingLogAppend(object@processingLog, note)
     object
