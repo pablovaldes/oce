@@ -296,21 +296,23 @@ setMethod(f="summary",
               mnames <- names(object@metadata)
               cat("ADP Summary\n-----------\n\n", ...)
               if ("instrumentType" %in% mnames)
-                  cat(paste0("* Instrument:         ", object@metadata$instrumentType, "\n"), ...)
+                  cat(sprintf("* Instrument:         %s\n", object@metadata$instrumentType), ...)
               if ("manufacturere" %in% mnames)
-                  cat("* Manufacturer:      ", object@metadata$manufacturer, "\n")
+                  cat(sprintf("* Manufacturer:      %s\n", object@metadata$manufacturer))
               if ("serialNumber" %in% mnames)
-                  cat(paste0("* Serial number:      ", object@metadata$serialNumber, "\n"), ...)
+                  cat(sprintf("* Serial number:      %s\n", object@metadata$serialNumber), ...)
               if ("firmwareVersion" %in% mnames)
-                  cat(paste0("* Firmware version:   ", object@metadata$firmwareVersion, "\n"), ...)
+                  cat(sprintf("* Firmware version:   %s\n", object@metadata$firmwareVersion), ...)
               if ("filename" %in% mnames)
-                  cat(paste0("* Source filename:    ``", object@metadata$filename, "``\n"), ...)
+                  cat(sprintf("* Source filename:    ``%s  \n", object@metadata$filename), ...)
               if ("latitude" %in% names(object@metadata)) {
-                  cat(paste("* Location:           ",
-                            if (is.na(object@metadata$latitude)) "unknown latitude" else sprintf("%.5f N", object@metadata$latitude), ", ",
-                            if (is.na(object@metadata$longitude)) "unknown longitude" else sprintf("%.5f E",
-                                                                                                   object@metadata$longitude),
-                            "\n", sep=''))
+                  cat(paste0("* Location:           ",
+                            if (is.na(object@metadata$latitude)) "unknown latitude" 
+                                      else sprintf("%.5f N", object@metadata$latitude), 
+                             ", ",
+                            if (is.na(object@metadata$longitude)) "unknown longitude" 
+                                      else sprintf("%.5f E", object@metadata$longitude),
+                            "\n"))
               }
               v.dim <- dim(object@data$v)
               cat("* Number of profiles:", v.dim[1], "\n")
@@ -526,11 +528,11 @@ setValidity("adp",
                 }
                 mdim <- dim(object@data$v)
                 if ("a" %in% names(object@data) && !all.equal(mdim, dim(object@data$a))) {
-                    cat("dimension of 'a' is (", dim(object@data$a), "), which does not match that of 'v' (", mdim, ")\n")
+                    cat(sprintf("dimension of 'a' (%s) does not match that of 'v' (%s)\n", dim(object@data$a), mdim))
                     return(FALSE)
                 }
                 if ("q" %in% names(object@data) && !all.equal(mdim, dim(object@data$q))) {
-                    cat("dimension of 'a' is (", dim(object@data$a), "), which does not match that of 'v' (", mdim, ")\n")
+                    cat(sprintf("dimension of 'a' (%s) does not match that of 'v' (%s)\n", dim(object@data$a), mdim))
                     return(FALSE)
                 }
                 if ("time" %in% names(object@data)) {
@@ -2747,7 +2749,7 @@ xyzToEnuAdp <- function(x, declination=0, debug=getOption("oceDebug"))
     }
     res@metadata$oceCoordinate <- "enu"
     res@processingLog <- processingLogAppend(res@processingLog,
-                                       paste("xyzToEnu(x", ", declination=", declination, ", debug=", debug, ")", sep=""))
+                                 paste0("xyzToEnu(x, declination=", declination, ", debug=", debug, ")"))
     oceDebug(debug, "} # xyzToEnuAdp()\n", unindent=1)
     res
 }
