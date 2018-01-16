@@ -537,8 +537,10 @@ setValidity("adp",
                     n <- length(object@data$time)
                     for (item in c("pressure", "temperature", "salinity", "depth", "heading", "pitch", "roll")) {
                         if (item %in% names(object@data) && length(object@data[[item]]) != n) {
-                            cat("length of time vector is ", n, " but the length of ", item, " is ", 
-                                length(object@data[[item]]), "\n")
+                            cat(sprintf("length of time vector is %.0f but the length of %s is %.0f\n", 
+                                        n, 
+                                        item
+                                        length(object@data[[item]])))
                             return(FALSE)
                         }
                     }
