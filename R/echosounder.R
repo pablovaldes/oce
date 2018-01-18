@@ -1131,4 +1131,3 @@ read.echosounder <- function(file, channel=1, soundSpeed=swSoundSpeed(35, 10, 50
     .C("biosonics_free_storage", package="oce") # clear temporary storage space
     res
 }
-
