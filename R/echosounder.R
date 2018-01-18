@@ -14,7 +14,7 @@
 #' 
 #' \itemize{
 #' 
-#' \item An infrequently updated record of the intrument position, in
+#' \item An infrequently updated record of the instrument position, in
 #' \code{timeSlow}, \code{longitudeSlow} and \code{latitudeSlow}.  These are
 #' used in plotting maps with \code{\link{plot,echosounder-method}}.
 #' 
@@ -53,7 +53,7 @@
 #' 
 #' \emph{Accessing values.} Data may be accessed as e.g.
 #' \code{echosounder[["time"]]}, \code{echosounder[["depth"]]},
-#' \code{echosounder[["a"]]}, etc.  Items in \code{metadata} must be specifield
+#' \code{echosounder[["a"]]}, etc.  Items in \code{metadata} must be specified
 #' by full name, but those in \code{data} may be abbreviated, so long as the
 #' abbreviation is unique. In addition to the actual data, some derived fields
 #' are also available: \code{echosounder[["distance"]]} calls
@@ -88,7 +88,7 @@ setClass("echosounder", contains="oce")
 #' 
 #' @description
 #' This is degraded subsample of measurements that were made with a Biosonics
-#' scientific echousounder, as part of the St Lawrence Internal Wave Experiment
+#' scientific echosounder, as part of the St Lawrence Internal Wave Experiment
 #' (SLEIWEX).
 #' 
 #' @name echosounder
