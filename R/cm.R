@@ -181,7 +181,7 @@ setMethod(f="subset",
                       }
                   }
               }
-              res@processingLog <- processingLogAppend(res@processingLog, paste("subset.cm(x, subset=", subsetString, ")", sep=""))
+              res@processingLog <- processingLogAppend(res@processingLog, paste0("subset.cm(x, subset=", subsetString, ")"))
               res
           })
 
