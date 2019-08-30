@@ -388,7 +388,7 @@ read.adp.sontek <- function(file, from=1, to, by=1, tz=getOption("oceTz"),
         stop("can only handle 3-beam devices")
     res@metadata$units <- list(v="m/s", distance="m")
     if (missing(processingLog))
-        processingLog <- paste(deparse(match.call()), sep="", collapse="")
+        processingLog <- paste0(deparse(match.call()), collapse="")
     hitem <- processingLogItem(processingLog)
     res@processingLog <- hitem
     res
@@ -479,13 +479,13 @@ read.adp.sontek.serial <- function(file, from=1, to, by=1, tz=getOption("oceTz")
         oceDebug(debug, "result: t=", format(t), " at d[", middle, "]=", p[middle], "\n")
         return(list(index=middle, time=t))
     }
-    oceDebug(debug, paste("read.adp.sontek.serial(file[1]=\"", file[1],
-                           "\", from=", from,
+    oceDebug(debug, paste0("read.adp.sontek.serial(file[1]=\"", file[1],
+                          "\", from=", from,
                            if (missing(to)) "to," else sprintf(", to=%s, ", format(to)),
                            ", by=", by,
                            ", latitude=", latitude, ", longitude=", longitude,
                            ", monitor=", monitor,
-                           ", processingLog=(not shown), debug=", debug, ") {\n", sep=""), unindent=1)
+                           ", processingLog=(not shown), debug=", debug, ") {\n"), unindent=1)
     nfile <- length(file)
     if (nfile > 1) {                   # handle multiple files
         oceDebug(debug, "handling multiple files\n")
@@ -682,7 +682,7 @@ read.adp.sontek.serial <- function(file, from=1, to, by=1, tz=getOption("oceTz")
                      pressure=rep(0, length(temperature)),
                      distance=distance)
     if (missing(processingLog))
-        processingLog <- paste(deparse(match.call()), sep="", collapse="")
+        processingLog <- paste0(deparse(match.call()), collapse="")
     hitem <- processingLogItem(processingLog)
     res@processingLog <- hitem
     res
