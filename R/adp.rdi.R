@@ -242,7 +242,7 @@ decodeHeaderRDI <- function(buf, debug=getOption("oceDebug"), tz=getOption("oceT
                               readBin(FLD[48], "integer", n=1, size=1, signed=FALSE),
                               readBin(FLD[49], "integer", n=1, size=1, signed=FALSE),
                               readBin(FLD[50], "integer", n=1, size=1, signed=FALSE))
-    oceDebug(debug, paste("CPU.BOARD.SERIAL.NUMBER = '", paste(cpuBoardSerialNumber, collapse=""), "'\n", sep=""))
+    oceDebug(debug, paste0("CPU.BOARD.SERIAL.NUMBER = '", paste(cpuBoardSerialNumber, collapse=""), "'\n"))
     systemBandwidth <- readBin(FLD[51:52], "integer", n=1, size=2, endian="little")
     ##systemPower <- readBin(FLD[53], "integer", n=1, size=1)
     ## FLD[54] spare
@@ -1054,28 +1054,28 @@ read.adp.rdi <- function(file, from=1, to, by=1, tz=getOption("oceTz"),
                             vtmp <- readBin(buf[o + 1 + seq(1, 2*vItems)], "integer", n=vItems, size=2, endian="little", signed=TRUE)
                             vtmp[vtmp==(-32768)] <- NA       # blank out bad data
                             vv[i,] <- velocityScale * vtmp
-                            if (debug && i <= profilesToShow) cat(vectorShow(vv[i,], paste("vv[", i, ",]", sep="")))
+                            if (debug && i <= profilesToShow) cat(vectorShow(vv[i,], paste0("vv[", i, ",]")))
                         } else {
                             oceDebug(debug, "**Detected vertical beam data chunk, but this is not a SentinelV\n")
                         }
                     } else if (buf[o] == 0x00 & buf[1+o] == 0x0c) { # vertical beam amplitude
                         if (isSentinel) {
                             va[i,] <- buf[o + 1 + seq(1, vItems)]
-                            if (debug && i <= profilesToShow) cat(vectorShow(va[i,], paste("va[", i, ",]", sep="")))
+                            if (debug && i <= profilesToShow) cat(vectorShow(va[i,], paste0("va[", i, ",]")))
                         } else {
                             oceDebug(debug, "**Detected vertical beam amplitude chunk, but this is not a SentinelV\n")
                         }
                     } else if (buf[o] == 0x00 & buf[1+o] == 0x0b) { # vertical beam correlation
                         if (isSentinel) {
                             vq[i,] <- buf[o + 1 + seq(1, vItems)]
-                            if (debug && i <= profilesToShow) cat(vectorShow(vq[i,], paste("vq[", i, ",]", sep="")))
+                            if (debug && i <= profilesToShow) cat(vectorShow(vq[i,], paste0("vq[", i, ",]")))
                         } else {
                             oceDebug(debug, "**Detected vertical beam correlation chunk, but this is not a SentinelV\n")
                         }
                     } else if (buf[o] == 0x00 & buf[1+o] == 0x0d) { # vertical beam percent good
                         if (isSentinel) {
                             vg[i,] <- buf[o + 1 + seq(1, vItems)]
-                            if (debug && i <= profilesToShow) cat(vectorShow(vg[i,], paste("vg[", i, ",]", sep="")))
+                            if (debug && i <= profilesToShow) cat(vectorShow(vg[i,], paste0("vg[", i, ",]")))
                         } else {
                             oceDebug(debug, "**Detected vertical beam percent good chunk, but this is not a SentinelV\n")
                         }
@@ -1098,21 +1098,21 @@ read.adp.rdi <- function(file, from=1, to, by=1, tz=getOption("oceTz"),
                         vv[vv==(-32768)] <- NA       # blank out bad data
                         v[i,,] <- matrix(velocityScale * vv, ncol=numberOfBeams, byrow=TRUE)
                         o <- o + items * 2 + 2 # point to next chunk
-                        if (debug && i <= profilesToShow) cat(vectorShow(v[i,,], paste("v[", i, ",,]", sep="")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(v[i,,], paste0("v[", i, ",,]")))
                     } else if (buf[o+1] == 0x02) {
                         message("CORRELATION")
                         q[i,,] <- matrix(buf[o + 1 + seq(1, items)], ncol=numberOfBeams, byrow=TRUE)
-                        if (debug && i <= profilesToShow) cat(vectorShow(q[i,,], paste("q[", i, ",,]", sep="")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(q[i,,], paste0("q[", i, ",,]")))
                         o <- o + items + 2 # point to next chunk
                     } else if (buf[o+1] == 0x03) {
                         message("ECHO INTENSITY")
                         a[i,,] <- matrix(buf[o + 1 + seq(1, items)], ncol=numberOfBeams, byrow=TRUE)
-                        if (debug && i <= profilesToShow) cat(vectorShow(a[i,,], paste("a[", i, ",,]", sep="")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(a[i,,], paste0("a[", i, ",,]")))
                         o <- o + items + 2 # point to next chunk
                     } else if (buf[o+1] == 0x04) {
                         message("PERCENT GOOD")
                         g[i,,] <- matrix(buf[o + 1 + seq(1, items)], ncol=numberOfBeams, byrow=TRUE)
-                        if (debug && i <= profilesToShow) cat(vectorShow(g[i,,], paste("g[", i, ",,]", sep="")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(g[i,,], paste0("g[", i, ",,]")))
                         o <- o + items + 2
                     } else if (buf[o+1] == 0x05) {
                         message("STATUS")
@@ -1131,11 +1131,11 @@ read.adp.rdi <- function(file, from=1, to, by=1, tz=getOption("oceTz"),
                         ba[i,] <- as.integer(buf[o+36:39])
                         bg[i,] <- as.integer(buf[o+40:43])
                         o <- o + 81 ## BOTTOM data chunk is always 81 bytes (Fig 46, p145 teledyne2014ostm)
-                        if (debug && i <= profilesToShow) cat(vectorShow(br[i,], paste("br[", i, ",]", sep="")))
-                        if (debug && i <= profilesToShow) cat(vectorShow(bv[i,], paste("bv[", i, ",]", sep="")))
-                        if (debug && i <= profilesToShow) cat(vectorShow(bc[i,], paste("bc[", i, ",]", sep="")))
-                        if (debug && i <= profilesToShow) cat(vectorShow(ba[i,], paste("ba[", i, ",]", sep="")))
-                        if (debug && i <= profilesToShow) cat(vectorShow(bg[i,], paste("bg[", i, ",]", sep="")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(br[i,], paste0("br[", i, ",]")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(bv[i,], paste0("bv[", i, ",]")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(bc[i,], paste0("bc[", i, ",]")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(ba[i,], paste0("ba[", i, ",]")))
+                        if (debug && i <= profilesToShow) cat(vectorShow(bg[i,], paste0("bg[", i, ",]")))
                     } else if (buf[o+1] == 0x20) { # navigation
                         message("NAVIGATION")
                         ## On the first profile, we set up space.
