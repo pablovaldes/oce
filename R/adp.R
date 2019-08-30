@@ -297,7 +297,7 @@ setMethod(f="summary",
               cat("ADP Summary\n-----------\n\n", ...)
               if ("instrumentType" %in% mnames)
                   cat(sprintf("* Instrument:         %s\n", object@metadata$instrumentType), ...)
-              if ("manufacturere" %in% mnames)
+              if ("manufacturer" %in% mnames)
                   cat(sprintf("* Manufacturer:      %s\n", object@metadata$manufacturer))
               if ("serialNumber" %in% mnames)
                   cat(sprintf("* Serial number:      %s\n", object@metadata$serialNumber), ...)
