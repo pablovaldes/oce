@@ -35,13 +35,13 @@ colormap_colorize <- function(z=NULL,
                               debug=getOption("oceDebug"))
 {
     oceDebug(debug, "colormap_colorize(z=",
-             if (is.null(z)) "(missing)" else paste("c(", z[1], ",...)", sep=""), ",",
+             if (is.null(z)) "(missing)" else paste0("c(", z[1], ",...)"), ",",
              "zlim=", if (missing(zlim)) "(missing)" else
-                 paste("c(", zlim[1], ",", zlim[2], "),", sep=""),
+                 paste0("c(", zlim[1], ",", zlim[2], "),"),
              "zclip=", zclip, ",",
              "breaks=", if (missing(breaks)) "(missing)" else
-                 paste("c(", breaks[1], ",...),", sep=""),
-             "col=", if (is.function(col)) "(function)" else paste("c(", col[1], ",...)", sep=""), ",",
+                 paste0("c(", breaks[1], ",...),"),
+             "col=", if (is.function(col)) "(function)" else paste0("c(", col[1], ",...)"), ",",
              "colormap=", if (is.null(colormap)) "(missing)" else colormap, ",",
              "segments=", segments, ",", 
              "missingColor=", missingColor,
