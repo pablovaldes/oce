@@ -415,7 +415,7 @@ findBottom <- function(x, ignore=5, clean=despike)
 #' 
 #' @description
 #' Plot echosounder data.
-#' Simple linear approximation is used when a \code{newx} value is specifie
+#' Simple linear approximation is used when a \code{newx} value is specified
 #' with the \code{which=2} method, but arguably a gridding method should be
 #' used, and this may be added in the future.
 #' 
@@ -757,7 +757,7 @@ setMethod(f="plot",
 #' @seealso The documentation for \code{\link{echosounder-class}} explains the
 #' structure of \code{ctd} objects, and also outlines the other functions
 #' dealing with them.
-#' @references Various echousounder instruments provided by BioSonics are
+#' @references Various echosounder instruments provided by BioSonics are
 #' described at the company website, \url{http://www.biosonicsinc.com/}.  The
 #' document listed as [1] below was provided to the author of this function in
 #' November 2011, which suggests that the data format was not changed since
@@ -1095,7 +1095,7 @@ read.echosounder <- function(file, channel=1, soundSpeed=swSoundSpeed(35, 10, 50
 
     ##old: ## NB: In the calculations of Sv and TS, the terms with sl, rs and tpow
     ##old: ## are not not divided by 10, as in [1 p34 and 35], because here those
-    ##old: ## quantities  are stored in dB, not 0.1 dB.  Similarly, corr is
+    ##old: ## quantities are stored in dB, not 0.1 dB.  Similarly, corr is
     ##old: ## not divided by 100 because it is in dB, not 0.01 dB.
 
     ##old: ## backscattering strength (Sv) in dB [1 p34]
